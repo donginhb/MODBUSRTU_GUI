@@ -94,6 +94,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label_ModbusRTU1 = new MODBUSRTU_CLASS.Label_ModbusRTU();
             this.bitStatus_ModbusRTU1 = new MODBUSRTU_CLASS.BitStatus_ModbusRTU();
+            this.textbox_ModbusRTU1 = new MODBUSRTU_CLASS.Textbox_ModbusRTU();
             this.panel22.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel18.SuspendLayout();
@@ -777,11 +778,32 @@
             this.bitStatus_ModbusRTU1.StationID = ((byte)(1));
             this.bitStatus_ModbusRTU1.TabIndex = 30;
             // 
+            // textbox_ModbusRTU1
+            // 
+            this.textbox_ModbusRTU1.EnablePeriodRequest = false;
+            this.textbox_ModbusRTU1.Location = new System.Drawing.Point(652, 181);
+            this.textbox_ModbusRTU1.MaxValue = 100D;
+            this.textbox_ModbusRTU1.MinValue = 1D;
+            this.textbox_ModbusRTU1.Name = "textbox_ModbusRTU1";
+            this.textbox_ModbusRTU1.ReadAddress = ((ushort)(0));
+            this.textbox_ModbusRTU1.ReadDataLengthInWord = ((byte)(1));
+            this.textbox_ModbusRTU1.ReadDataType = MODBUSRTU_CLASS.Textbox_ModbusRTU.ReadDataTypeEnum.UINT16;
+            this.textbox_ModbusRTU1.ReadFuncCode = MODBUSRTU_CLASS.Textbox_ModbusRTU.ReadFunctionCodeEnum.ReadStorageRegs;
+            this.textbox_ModbusRTU1.RequestPeriod = 100D;
+            this.textbox_ModbusRTU1.Size = new System.Drawing.Size(100, 21);
+            this.textbox_ModbusRTU1.StationID = ((byte)(1));
+            this.textbox_ModbusRTU1.TabIndex = 31;
+            this.textbox_ModbusRTU1.WriteAddress = ((ushort)(0));
+            this.textbox_ModbusRTU1.WriteDataLengthInWord = ((byte)(1));
+            this.textbox_ModbusRTU1.WriteDataType = MODBUSRTU_CLASS.Textbox_ModbusRTU.WriteDataTypeEnum.UINT16;
+            this.textbox_ModbusRTU1.WriteFuncCode = MODBUSRTU_CLASS.Textbox_ModbusRTU.WriteFunctionCodeEnum.WriteCoils;
+            // 
             // AA_SystemInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textbox_ModbusRTU1);
             this.Controls.Add(this.bitStatus_ModbusRTU1);
             this.Controls.Add(this.label_ModbusRTU1);
             this.Controls.Add(this.groupBox2);
@@ -913,5 +935,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private MODBUSRTU_CLASS.Label_ModbusRTU label_ModbusRTU1;
         private MODBUSRTU_CLASS.BitStatus_ModbusRTU bitStatus_ModbusRTU1;
+        private MODBUSRTU_CLASS.Textbox_ModbusRTU textbox_ModbusRTU1;
     }
 }
