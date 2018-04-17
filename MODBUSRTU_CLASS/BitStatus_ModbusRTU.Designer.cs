@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // BitStatus_ModbusRTU
+            // 
+            this.Name = "BitStatus_ModbusRTU";
+            this.Size = new System.Drawing.Size(20, 21);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

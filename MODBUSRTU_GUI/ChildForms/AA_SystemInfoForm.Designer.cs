@@ -92,6 +92,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label_ModbusRTU1 = new MODBUSRTU_CLASS.Label_ModbusRTU();
+            this.bitStatus_ModbusRTU1 = new MODBUSRTU_CLASS.BitStatus_ModbusRTU();
             this.panel22.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel18.SuspendLayout();
@@ -744,11 +746,44 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "实时数据";
             // 
+            // label_ModbusRTU1
+            // 
+            this.label_ModbusRTU1.AutoSize = true;
+            this.label_ModbusRTU1.EnablePeriodRequest = true;
+            this.label_ModbusRTU1.Location = new System.Drawing.Point(650, 214);
+            this.label_ModbusRTU1.Name = "label_ModbusRTU1";
+            this.label_ModbusRTU1.ReadAddress = ((ushort)(0));
+            this.label_ModbusRTU1.ReadDataLengthInWord = ((byte)(1));
+            this.label_ModbusRTU1.ReadDataType = MODBUSRTU_CLASS.Label_ModbusRTU.ReadDataTypeEnum.UINT16;
+            this.label_ModbusRTU1.ReadFuncCode = MODBUSRTU_CLASS.Label_ModbusRTU.ReadFunctionCodeEnum.ReadStorageRegs;
+            this.label_ModbusRTU1.RefreshPeriod = 100D;
+            this.label_ModbusRTU1.Size = new System.Drawing.Size(11, 12);
+            this.label_ModbusRTU1.StationID = ((byte)(1));
+            this.label_ModbusRTU1.TabIndex = 29;
+            this.label_ModbusRTU1.Text = "0";
+            // 
+            // bitStatus_ModbusRTU1
+            // 
+            this.bitStatus_ModbusRTU1.BackColor = System.Drawing.Color.White;
+            this.bitStatus_ModbusRTU1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bitStatus_ModbusRTU1.EnablePeriodRequest = true;
+            this.bitStatus_ModbusRTU1.Location = new System.Drawing.Point(675, 261);
+            this.bitStatus_ModbusRTU1.Name = "bitStatus_ModbusRTU1";
+            this.bitStatus_ModbusRTU1.ReadAddress = ((ushort)(0));
+            this.bitStatus_ModbusRTU1.ReadDataLengthInBit = ((byte)(1));
+            this.bitStatus_ModbusRTU1.ReadFuncCode = MODBUSRTU_CLASS.BitStatus_ModbusRTU.ReadFunctionCodeEnum.ReadCoils;
+            this.bitStatus_ModbusRTU1.RefreshPeriod = 100D;
+            this.bitStatus_ModbusRTU1.Size = new System.Drawing.Size(20, 21);
+            this.bitStatus_ModbusRTU1.StationID = ((byte)(1));
+            this.bitStatus_ModbusRTU1.TabIndex = 30;
+            // 
             // AA_SystemInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bitStatus_ModbusRTU1);
+            this.Controls.Add(this.label_ModbusRTU1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label39);
             this.Controls.Add(this.label38);
@@ -876,5 +911,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private MODBUSRTU_CLASS.Label_ModbusRTU label_ModbusRTU1;
+        private MODBUSRTU_CLASS.BitStatus_ModbusRTU bitStatus_ModbusRTU1;
     }
 }

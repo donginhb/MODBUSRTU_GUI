@@ -69,5 +69,10 @@
       <DependentUpon>Textbox_ModbusRTU.cs</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BitStatus_ModbusRTU.resx">
+      <DependentUpon>BitStatus_ModbusRTU.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
