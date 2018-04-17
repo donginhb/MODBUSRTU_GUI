@@ -11,9 +11,24 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -31,8 +46,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MODBUSRTU_GUI.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,14 +64,74 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="ChildForms\AA_SystemInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ChildForms\AA_SystemInfoForm.Designer.cs">
+      <DependentUpon>AA_SystemInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\A_WorkSpaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\A_WorkSpaceForm.Designer.cs">
+      <DependentUpon>A_WorkSpaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\AB_FaultInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\AB_FaultInfoForm.Designer.cs">
+      <DependentUpon>AB_FaultInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\AC_RTWaveformForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\AC_RTWaveformForm.Designer.cs">
+      <DependentUpon>AC_RTWaveformForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\AD_WorkModeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\AD_WorkModeForm.Designer.cs">
+      <DependentUpon>AD_WorkModeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\B_HistoryInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\B_HistoryInfoForm.Designer.cs">
+      <DependentUpon>B_HistoryInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingForms\CommSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForms\CommSettingForm.Designer.cs">
+      <DependentUpon>CommSettingForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChildForms\AA_SystemInfoForm.resx">
+      <DependentUpon>AA_SystemInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\AB_FaultInfoForm.resx">
+      <DependentUpon>AB_FaultInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\AC_RTWaveformForm.resx">
+      <DependentUpon>AC_RTWaveformForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\AD_WorkModeForm.resx">
+      <DependentUpon>AD_WorkModeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\A_WorkSpaceForm.resx">
+      <DependentUpon>A_WorkSpaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +141,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SettingForms\CommSettingForm.resx">
+      <DependentUpon>CommSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -74,6 +156,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MODBUSRTU_CLASS\MODBUSRTU_CLASS.csproj">
+      <Project>{01551b8e-a677-41be-8c0c-5dcbb172ed9c}</Project>
+      <Name>MODBUSRTU_CLASS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

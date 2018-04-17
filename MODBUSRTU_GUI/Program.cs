@@ -15,8 +15,8 @@ namespace MODBUSRTU_GUI
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.SetCompatibleTextRenderingDefault(true);
+            Application.Run(new MainForm());
         }
     }
 }

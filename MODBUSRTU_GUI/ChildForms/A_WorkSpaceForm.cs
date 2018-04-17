@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MODBUSRTU_GUI
+namespace MODBUSRTU_GUI.ChildForms
 {
-    public partial class Form1 : Form
+    public partial class A_WorkSpaceForm : Form
     {
-        public Form1()
+        public A_WorkSpaceForm()
         {
             InitializeComponent();
         }
